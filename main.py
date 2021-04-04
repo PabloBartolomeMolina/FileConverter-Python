@@ -7,20 +7,26 @@ import os
 from os import path
 
 def inputFile():
-    val = input("Enter the full path of the file to convert: ")
-    return val
-
-
-def main(name):
-    # Ask for the full path of the file to convert.
-    filepath = inputFile()
-    if os.path.exists(filepath):
-        if os.path.isfile(filepath):
+    filepath = input("Enter the full path of the file to convert: ")
+    verified = True
+    if path.exists(filepath):
+        if path.isfile(filepath):
             print("File " + str(filepath) + " is existing")
         else:
             print("File " + str(filepath) + " is NOT existing")
+            verified = False
     else:
-        print("Specified filepath is not OK")
+        print("Specified filepath is not existing")
+        verified = False
+
+    return filepath, verified
+
+def main(name):
+    # Ask for the full path of the file to convert.
+    filepath, verification = inputFile()
+    while not verification:
+        filepath, verification = inputFile()
+
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
