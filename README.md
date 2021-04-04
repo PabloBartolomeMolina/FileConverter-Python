@@ -7,7 +7,7 @@ Personal project to convert files to PDF and get used to work with Python with s
 The objective of this project is to get familiarize once again with Python language and get in touch with the IDE PyCharm
 
 Objective in terms of coding is to have an application to convert betweeen different types of files, by using different libraries and functions for that.
-The initial idea is to be able to convert images, Excel and Word files to PDF.
+The initial idea is to be able to convert several types of files to PDF with an optimized code in Python.
 
 ## Tools and libraries
 
