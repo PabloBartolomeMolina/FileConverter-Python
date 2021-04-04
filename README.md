@@ -11,12 +11,11 @@ The initial idea is to be able to convert images, Excel and Word files to PDF.
 
 ## Tools and libraries
 
-* Python version
-* PyCharm Version
+* Python version 3.8.3
+* PyCharm Version 2020.3.5 Community Editon
 * Libraries that were used
-    - Library 1
-    - Library 2
-    - Library 3    
+    - fpdf, version 1.7.2
+
 
 ## How to work with this project
 
@@ -24,7 +23,6 @@ The steps to work with the code of the project to contribute to this repository 
   1. Install Python, version
   2. Install PyCharm (best version, for full compatibility, is the used one)
   3. Install the Python libraries that are before indicated, which can be found as follows:
-      - Library 1
-      - Library 2
-      - Library 3
-  4. Clone the repository to have it locally
+      - fpdf, version 1.7.2
+            For the installation, check the best method for you in https://pypi.org/project/fpdf/
+  4. Clone the repository
