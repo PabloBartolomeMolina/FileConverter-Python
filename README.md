@@ -7,16 +7,15 @@ Personal project to convert files to PDF and get used to work with Python with s
 The objective of this project is to get familiarize once again with Python language and get in touch with the IDE PyCharm
 
 Objective in terms of coding is to have an application to convert betweeen different types of files, by using different libraries and functions for that.
-The initial idea is to be able to convert images, Excel and Word files to PDF.
+The initial idea is to be able to convert several types of files to PDF with an optimized code in Python.
 
 ## Tools and libraries
 
-* Python version
-* PyCharm Version
+* Python version 3.8.3
+* PyCharm Version 2020.3.5 Community Editon
 * Libraries that were used
-    - Library 1
-    - Library 2
-    - Library 3    
+    - fpdf, version 1.7.2
+
 
 ## How to work with this project
 
@@ -24,7 +23,6 @@ The steps to work with the code of the project to contribute to this repository 
   1. Install Python, version
   2. Install PyCharm (best version, for full compatibility, is the used one)
   3. Install the Python libraries that are before indicated, which can be found as follows:
-      - Library 1
-      - Library 2
-      - Library 3
-  4. Clone the repository to have it locally
+      - fpdf, version 1.7.2
+            For the installation, check the best method for you in https://pypi.org/project/fpdf/
+  4. Clone the repository
