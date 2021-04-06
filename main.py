@@ -32,6 +32,7 @@ def input_file():
             f = open("defaults.txt", "r")
             filepath = f.readline()
             verified = True
+            f.close()
         elif ans == 'n': # new file to be defined by user input
             filepath, verified = user_file()    # User defined file
         else:
@@ -57,6 +58,7 @@ def create_pdf(filepath):
             pdf.cell(ln=i, h=5.0, align='L', w=0, txt=line, border=0)   # Copy the line to the created PDF file
             i = i + 1
     pdf.output(filepath.split(".")[0] + '.pdf', 'F')    # Close PDF file with the information
+    pdf.close()
 
 
 def main(name):
