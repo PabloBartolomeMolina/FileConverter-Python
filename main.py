@@ -8,7 +8,7 @@ from os import path
 from fpdf import FPDF
 
 
-def input_file():
+def user_file():
     filepath = input("Enter the full path of the file to convert: ")
     verified = True
     if path.exists(filepath):
@@ -20,6 +20,26 @@ def input_file():
     else:
         print("Specified filepath is not existing")
         verified = False
+
+    return filepath, verified
+
+
+def input_file():
+    # Check if we use the specified file in the defaults.txt file or a new one
+    if path.exists("defaults.txt"):
+        ans = input("Shall I use the default file? (y/n)...   ")
+        if ans == 'y':  # default file
+            f = open("defaults.txt", "r")
+            filepath = f.readline()
+            verified = True
+        elif ans == 'n': # new file to be defined by user input
+            filepath, verified = user_file()    # User defined file
+        else:
+            print("I do not understand what you want to do. ")
+            filepath, verified = user_file()  # User defined file
+    else:
+        filepath, verified = user_file()    # User defined file
+
     return filepath, verified
 
 
