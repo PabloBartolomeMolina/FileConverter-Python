@@ -23,6 +23,33 @@ def user_file():
 
     return filepath, verified
 
+'''
+# Line counter for the cases with several lines and files specified in default.txt
+# In developement, need correctly implement an optimized logic on the main flow for this feature
+def file_lines():
+    line_count = 0
+    f = open("defaults.txt", "r")
+    for line in f:
+        if line != "\n":
+            line_count += 1
+    if line_count == 0:
+        print("No information available about files to read...")
+        filepath, verified = user_file()  # User defined file
+    elif line_count == 1:
+        filepath = f.readline()
+        verified = True
+    else:
+        print("Several files indicated in defaults, please select one...")
+        for line in f:
+            if line != "\n":
+                print(line)
+                ans = input("Should I select this one?  (y/n)...   ")
+                if ans == 'y':
+                    print("OK")
+                else:
+                    print()
+    f.close()
+'''
 
 def input_file():
     # Check if we use the specified file in the defaults.txt file or a new one
@@ -31,6 +58,8 @@ def input_file():
         if ans == 'y':  # default file
             f = open("defaults.txt", "r")
             filepath = f.readline()
+            if filepath.endswith("\n"):
+                filepath = filepath.rstrip("\n")
             verified = True
             f.close()
         elif ans == 'n': # new file to be defined by user input
