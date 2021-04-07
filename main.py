@@ -55,6 +55,15 @@ def create_pdf(filepath):
     pdf.set_font('Arial', 'B', 16)
     with open(filepath, encoding='utf8') as f:  # Open the file to copy
         for line in f:  # Take a new line of the file
+            if line.startswith('#') or line.startswith('    #'):
+                pdf.set_font('Arial', 'I', 11)
+                pdf.set_text_color(0,150,125)
+            elif line.startswith('def'):
+                pdf.set_font('Arial', 'B', 12)
+                pdf.set_text_color(255, 0, 0)
+            else:
+                pdf.set_font('Arial', '', 10)
+                pdf.set_text_color(0, 0, 0)
             pdf.cell(ln=i, h=5.0, align='L', w=0, txt=line, border=0)   # Copy the line to the created PDF file
             i = i + 1
     pdf.output(filepath.split(".")[0] + '.pdf', 'F')    # Close PDF file with the information
